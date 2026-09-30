@@ -1,9 +1,11 @@
 gradio
 fastapi
-sentence-transformers
 scikit-learn
-joblib
-torch
-transformers
 python-docx
 pypdf
+
+# Original ML dependencies — not used by Vercel version
+# sentence-transformers
+# joblib
+# torch
+# transformers
