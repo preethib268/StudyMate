@@ -18,8 +18,15 @@ from studymate_full import StudyMate
 # ---------------------------------------------------------------------------
 # Modes — each entry knows how to build its analyzer, lazily
 # ---------------------------------------------------------------------------
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
 def _build_precise():
-    return StudyMate(model_name="all-mpnet-base-v2", clf_path="studymate_model_emb.joblib")
+    return StudyMate(
+        model_name="all-mpnet-base-v2",
+        clf_path=str(BASE_DIR / "studymate_model_emb.joblib")
+    )
 
 def _build_quick():
     return StudyMate(model_name="all-MiniLM-L6-v2", clf_path="__none__")
